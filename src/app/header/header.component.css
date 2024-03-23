@@ -1,0 +1,15 @@
+.custom-border {
+    border-bottom: 1px solid #FFF;
+  }
+
+.title{
+    cursor:pointer;
+  }
+
+  .light-theme {
+    /* Estilos para el tema claro */
+  }
+  
+  .dark-theme {
+    /* Estilos para el tema oscuro */
+  }

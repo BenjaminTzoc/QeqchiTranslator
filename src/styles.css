@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+.nerko-one-regular {
+    font-family: "Nerko One", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .background{
+    background-color: #F6BB6C !important;
+  }
+
+  /* .text-font{
+    font-family: "Nerko One", cursive;
+    font-size: 22px;
+  } */
+  .text-font{
+    font-family: "Inter", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .text-font:hover{
+    color: #FFF; 
+  }
+
+  .text-font-dark{
+    color: #242321; 
+  }
+
+  .light-theme {
+    /* Estilos para el tema claro */
+  }
+  
+  .dark-theme {
+    /* Estilos para el tema oscuro */
+  }
+
+  body{
+    background-color: #242321 !important;
+    color: #FFF !important;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

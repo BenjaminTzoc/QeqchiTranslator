@@ -1,1 +1,5 @@
-<app-login></app-login>
+
+<div class="w-100 h-100" [ngClass]="{'light-theme': lightThemeEnabled, 'dark-theme': !lightThemeEnabled}">
+    <app-header></app-header>
+    <app-translator></app-translator>
+</div>
