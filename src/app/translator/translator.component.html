@@ -3,30 +3,30 @@
         <p>EMPIEZA A TRADUCIR</p>
      </div>
      <div>
-        <li class="nav-item dropdown w-100 h-100 d-flex justify-content-center align-items-center m-2">
-            <a class="nav-link dropdown-toggle mr-4" style="margin-right: 25rem;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li class="nav-item dropdown w-100 h-100 d-flex justify-content-evenly align-items-center m-2">
+            <a class="nav-link dropdown-toggle mr-4 text-font" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Español
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
+            <ul class="dropdown-menu background">
+              <li><a class="dropdown-item" href="#">Opcion a</a></li>
+              <li><a class="dropdown-item" href="#">Opcion b</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Mas</a></li>
             </ul>
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-font" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Q'eqchi
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+              <ul class="dropdown-menu background">
+                <li><a class="dropdown-item" href="#">Opcion a</a></li>
+                <li><a class="dropdown-item" href="#">Opcion b</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Mas</a></li>
               </ul>
           </li>
      </div>
      <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-         <textarea rows="20" cols="60" [(ngModel)]="texto" style="resize: none;" class="textarea-border"></textarea>
-         <textarea rows="20" cols="60" [(ngModel)]="texto" style="resize: none;" class="textarea-border"></textarea>
+         <textarea placeholder="Ingrese un texto" rows="20" cols="40" [(ngModel)]="textToTranslate" style="resize: none;" class="textarea-border"></textarea>
+         <textarea placeholder="Traduccion" rows="20" cols="40" [(ngModel)]="textTranslation" style="resize: none;" class="textarea-border"></textarea>
      </div>
 </div>
 

@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './translator.component.css'
 })
 export class TranslatorComponent {
-  texto:string = ""; 
+  textToTranslate: string = "";
+  textTranslation: string = "";
 }

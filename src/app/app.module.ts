@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatorComponent } from './translator/translator.component';
+import { DictionaryComponent } from './dictionary/dictionary.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TranslatorComponent } from './translator/translator.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    TranslatorComponent
+    TranslatorComponent,
+    DictionaryComponent
   ],
   imports: [
     BrowserModule,
