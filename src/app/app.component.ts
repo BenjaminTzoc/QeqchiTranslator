@@ -8,11 +8,11 @@ import {HeaderComponent} from './header/header.component';
 })
 export class AppComponent implements AfterViewInit{
   title = 'QeqchiTranslator';
-  lightThemeEnabled: boolean = false; 
+  // lightThemeEnabled: boolean = false; 
   @ViewChild(HeaderComponent) header:any; 
 
   ngAfterViewInit(): void {
-    this.lightThemeEnabled = this.header.lightThemeEnabled; 
-    console.log(this.lightThemeEnabled); 
+    // this.lightThemeEnabled = this.header.lightThemeEnabled; 
+    // console.log(this.lightThemeEnabled); 
   }
 }

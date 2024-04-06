@@ -1,7 +1,11 @@
 .custom-border {
-    border-bottom: 1px solid #FFF;
+    border-bottom: 2px solid #CBCFD0;
   }
 
+  .text-font:hover{
+    color: #F6C23F; 
+  }
+  
 .title{
     cursor:pointer;
   }

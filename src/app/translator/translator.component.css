@@ -3,6 +3,10 @@
     background: transparent;
 }
 
+p.quitarhover:hover{
+    background-color: transparent !important;
+}
+
 textarea{
     font-family: "Inter", sans-serif;
     font-size: 22px;

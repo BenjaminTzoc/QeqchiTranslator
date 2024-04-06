@@ -1,1 +1,41 @@
-<p>dictionary works!</p>
+<div>
+    <div class="custom-search-container">
+        <form class="d-flex" role="search" (submit)="search($event)">
+            <input class="form-control me-2 custom-search-input" type="search" placeholder="Buscar palabra" aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>   
+    </div>
+
+    <ul *ngIf="filteredResults.length > 0">
+        <li *ngFor="let result of filteredResults">
+            <h3>{{ result.title }}</h3>
+            <p>{{ result.description }}</p>
+        </li>
+    </ul>
+
+    <div class="w-100 d-flex justify-content-center">
+        <h2 class="mb-0 mt-3">Categorías</h2>
+    </div>
+    <div class="w-100 d-flex justify-content-center py-3">
+        <div *ngFor="let card of cards">
+            <app-card [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation"></app-card>
+        </div>
+    </div>
+    <!-- <div>
+        <button button class="btn btn-outline-success">Animales</button>
+        <button button class="btn btn-outline-success">Animales</button>
+        <button button class="btn btn-outline-success">Animales</button>
+    </div>
+
+    <div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">¡Bienvenido!</h1>
+    <p class="lead">Este es un ejemplo de un jumbotron en Angular con Bootstrap.</p>
+    <hr class="my-4">
+    <p>¡Empieza a utilizar Angular y Bootstrap hoy mismo!</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Aprender más</a>
+  </div>
+</div> -->
+
+
+</div>

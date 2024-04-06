@@ -1,0 +1,10 @@
+.custom-search-input {
+    /* Estilos para el campo de búsqueda */
+    width: 40rem; /* Ajusta el ancho según lo desees */
+}
+
+.custom-search-container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    margin-top: 4rem;
+}

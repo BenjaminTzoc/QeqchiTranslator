@@ -1,5 +1,6 @@
 
-<div class="w-100 h-100" style="overflow: hidden !important;" [ngClass]="{'light-theme': lightThemeEnabled, 'dark-theme': !lightThemeEnabled}">
+<div class="w-100 h-100" style="overflow: hidden !important;">
+    <!-- [ngClass]="{'light-theme': lightThemeEnabled, 'dark-theme': !lightThemeEnabled}" va en el primer div -->
     <app-header></app-header>
-    <app-translator></app-translator>
+    <router-outlet></router-outlet>
 </div>

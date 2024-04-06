@@ -1,19 +1,22 @@
 <nav class="navbar navbar-expand-lg background custom-border">
     <div class="container-fluid">
-      <P class="text-font-dark text-font m-0 title px-2" href="#">Traductor</P>
+      <div>
+        <img src="assets\header-image\mayatrad.png" alt="mayatrad" style="width: 8rem; height: 3rem;">
+      </div>
+      <P class="text-font-dark text-font m-0 title px-2" href="#" (click)="redirectToComponent(['/translator'])">Traductor</P>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item d-flex align-items-center text-center px-2">
-            <p class="text-font text-font-dark active m-lg-0" href="#" (click)="redirectToComponent()">Diccionario</p>
+            <p class="text-font text-font-dark active m-lg-0" href="#" (click)="redirectToComponent(['/dictionary'])">Diccionario</p>
           </li>
           <li class="nav-item d-flex align-items-center text-center text-sm-left px-2">
-            <p class="text-font text-font-dark active m-lg-0" href="#">Ayuda</p>
+            <p class="text-font text-font-dark active m-lg-0" href="#" (click)="redirectToComponent(['/help'])">Ayuda</p>
           </li>
           <li class="nav-item d-flex align-items-center text-center text-sm-left px-2">
-            <p class="text-font text-font-dark active m-lg-0" href="#">Mis Notas</p>
+            <p class="text-font text-font-dark active m-lg-0" href="#" (click)="redirectToComponent(['/notes'])">Mis Notas</p>
           </li>
           <li class="nav-item d-flex align-items-center text-center text-sm-left px-2">
             <p class="text-font text-font-dark active m-lg-0" href="#">Sobre Nosotros</p>
@@ -22,7 +25,7 @@
         </ul>
         <!-- <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type"submit">Search</button>
         </form>
         <button (click)="toggleTheme()">Cambiar tema</button>
         <div [ngClass]="{'light-theme': lightThemeEnabled, 'dark-theme': !lightThemeEnabled}"> -->

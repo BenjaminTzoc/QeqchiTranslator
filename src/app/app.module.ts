@@ -11,6 +11,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatorComponent } from './translator/translator.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
+import { NotesComponent } from './notes/notes.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { DictionaryComponent } from './dictionary/dictionary.component';
     HomeComponent,
     HeaderComponent,
     TranslatorComponent,
-    DictionaryComponent
+    DictionaryComponent,
+    NotesComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

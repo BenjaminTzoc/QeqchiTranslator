@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,11 +7,15 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   lightThemeEnabled: boolean = false; 
 
   constructor(private router: Router){
     
+  }
+
+  ngOnInit(): void {
+    this.router.navigate(['/translator']);
   }
 
   toggleTheme(){
@@ -19,8 +23,9 @@ export class HeaderComponent {
     console.log(this.lightThemeEnabled);
   }
 
-  redirectToComponent(){
+  redirectToComponent(translatorRedirect: any){
     console.log('a')
-    this.router.navigate(['/dictionary']);
+    this.router.navigate(translatorRedirect);
   }
 }
+

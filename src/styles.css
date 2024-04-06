@@ -5,7 +5,7 @@
   }
 
   .background{
-    background-color: #F6BB6C !important;
+    background-color: #FFF !important;
   }
 
   /* .text-font{
@@ -14,14 +14,14 @@
   } */
   .text-font{
     font-family: "Inter", sans-serif;
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: bold;
   }
 
-  .text-font:hover{
-    color: #FFF; 
-  }
+  /* .text-font:hover{
+    color: #F6C23F; 
+  } */
 
   .text-font-dark{
     color: #242321; 
@@ -36,8 +36,8 @@
   }
 
   body{
-    background-color: #242321 !important;
-    color: #FFF !important;
+    background-color: #FFF !important;
+    color: #242321 !important;
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
