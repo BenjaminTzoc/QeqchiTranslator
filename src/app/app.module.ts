@@ -13,6 +13,8 @@ import { TranslatorComponent } from './translator/translator.component';
 import { DictionaryComponent } from './dictionary/dictionary.component';
 import { NotesComponent } from './notes/notes.component';
 import { CardComponent } from './card/card.component';
+import { AnimalsComponent } from './animals/animals.component';
+import { NumbersComponent } from './numbers/numbers.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CardComponent } from './card/card.component';
     TranslatorComponent,
     DictionaryComponent,
     NotesComponent,
-    CardComponent
+    CardComponent,
+    AnimalsComponent,
+    NumbersComponent
   ],
   imports: [
     BrowserModule,

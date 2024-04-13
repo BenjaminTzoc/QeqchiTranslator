@@ -6,19 +6,20 @@
         </form>   
     </div>
 
-    <ul *ngIf="filteredResults.length > 0">
-        <li *ngFor="let result of filteredResults">
-            <h3>{{ result.title }}</h3>
-            <p>{{ result.description }}</p>
-        </li>
-    </ul>
+    <div *ngIf="filteredResults.length > 0" class="container">
+        <div *ngFor="let result of filteredResults" class="result-item">
+            <h3 class="m-0">{{ result.title }}</h3>
+            <p class="m-0">{{ result.description }}</p>
+        </div>
+    </div>
+    
 
     <div class="w-100 d-flex justify-content-center">
         <h2 class="mb-0 mt-3">Categorías</h2>
     </div>
     <div class="w-100 d-flex justify-content-center py-3">
         <div *ngFor="let card of cards">
-            <app-card [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation"></app-card>
+            <app-card [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation" (click)="redirectFromCard(card.route)"></app-card>
         </div>
     </div>
     <!-- <div>

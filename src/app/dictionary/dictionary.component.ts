@@ -1,5 +1,15 @@
 import { Component } from '@angular/core';
 import { title } from 'process';
+import { CardComponent } from '../card/card.component';
+import { Router } from '@angular/router';
+import path from 'path';
+
+interface Card {
+  title: string;
+  URL: string;
+  translation: string;
+  route: object;
+}
 
 @Component({
   selector: 'app-dictionary',
@@ -17,10 +27,14 @@ export class DictionaryComponent {
  
   ];
   filteredResults: any[] = []; 
-  cards: any[] = [
-    {title: 'Animales', URL: 'assets/card-image/cangrejo.png', translation: `Eb' li xul`},
-    {title: 'Animales', URL: 'assets/card-image/cangrejo.png', translation: `Eb' li xul`}
+  cards: Card[] = [
+    {title: 'Animales', URL: 'assets/card-image/cangrejo.png', translation: `Eb' li xul`, route: ['/animals']},
+    {title: 'Números', URL: 'assets/card-image/numero.png', translation: `Eb' li xul`, route: ['/numbers']}
   ];
+
+  constructor(private router: Router){
+    
+  }
 
   search(event: Event){
     event.preventDefault();
@@ -40,5 +54,9 @@ export class DictionaryComponent {
     }
   }
   
+  redirectFromCard(route: any){
+    console.log(route); 
+    this.router.navigate(route);
+  }
 
 }

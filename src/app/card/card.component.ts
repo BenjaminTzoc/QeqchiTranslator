@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -10,9 +11,11 @@ export class CardComponent {
   @Input() imageUrl: string = '';
   @Input() translation: string = '';
 
-  constructor(){}
+  constructor(){
+  }
 
   ngOnInit(): void{
 
   }
+
 }
