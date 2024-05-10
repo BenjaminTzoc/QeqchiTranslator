@@ -18,9 +18,17 @@
         <h2 class="mb-0 mt-3">Categorías</h2>
     </div>
     <div class="w-100 d-flex justify-content-center py-3">
-        <div *ngFor="let card of cards">
+        <ngx-slick-carousel class="carousel"
+            #slickModal="slick-carousel"
+            [config]="slideConfig">
+            <div ngxSlickItem class="slide" *ngFor="let card of cards; let i = index;">
+                <!-- <div style="background: lime; margin-inline: 2em; height: 100px;">{{i}}</div> -->
+                <app-card [id]="i" [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation" (click)="redirectFromCard(card.route)"></app-card>
+            </div>
+        </ngx-slick-carousel>
+        <!-- <div *ngFor="let card of cards">
             <app-card [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation" (click)="redirectFromCard(card.route)"></app-card>
-        </div>
+        </div> -->
     </div>
     <!-- <div>
         <button button class="btn btn-outline-success">Animales</button>

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { title } from 'process';
-import { CardComponent } from '../card/card.component';
 import { Router } from '@angular/router';
 import path from 'path';
 
@@ -31,6 +30,8 @@ export class DictionaryComponent {
     {title: 'Animales', URL: 'assets/card-image/cangrejo.png', translation: `Eb' li xul`, route: ['/animals']},
     {title: 'Números', URL: 'assets/card-image/numero.png', translation: `Eb' li xul`, route: ['/numbers']}
   ];
+
+  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4, "autoplay": true, "autoplaySpeed": 4000};
 
   constructor(private router: Router){
     

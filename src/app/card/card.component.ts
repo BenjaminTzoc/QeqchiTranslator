@@ -10,6 +10,7 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() imageUrl: string = '';
   @Input() translation: string = '';
+  @Input() id: number = 0;
 
   constructor(){
   }

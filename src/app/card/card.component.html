@@ -4,14 +4,15 @@
       <h5 class="card-title">{{ title }}</h5>
       <p class="card-text">Texto.</p>
     </div> -->
-    <div style="width: 30%; height: 100%; align-items: center; justify-content: center; display:flex;">
-      <img class="card-img-top" [src]="imageUrl" alt="cangrejo" style="height: auto; width: 100%;">
-    </div>
-    <div class="px-3" style="height: auto; width: 100%; justify-content: center; display:flex; flex-direction: column;">
-      <h2 class="card-title mb-1">{{ title }}</h2>
-      <p class="card-text">{{ translation }}</p>
-    </div>
+    {{id}}
+  <div style="width: 30%; height: 100%; align-items: center; justify-content: center; display:flex;">
+    <img class="card-img-top" [src]="imageUrl" alt="cangrejo" style="height: auto; width: 100%;">
   </div>
+  <div class="px-3" style="height: auto; width: 100%; justify-content: center; display:flex; flex-direction: column;">
+    <h2 class="card-title mb-1">{{ title }}</h2>
+    <p class="card-text">{{ translation }}</p>
+  </div>
+</div>
 
   
   <!-- <div class="card">
