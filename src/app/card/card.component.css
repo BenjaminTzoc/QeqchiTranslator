@@ -1,6 +1,11 @@
 .card-option {
-    height: 100px;
-    border: 1px solid #CBCFD0; 
-    border-radius: 10px;
-  }
+  height: 100px;
+  border: 1px solid #CBCFD0; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.card-option:hover{
+  background-color: #cbcfcf;
+}
   

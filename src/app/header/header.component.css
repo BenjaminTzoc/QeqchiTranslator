@@ -17,3 +17,7 @@
   .dark-theme {
     /* Estilos para el tema oscuro */
   }
+
+p{
+  cursor: pointer;
+}

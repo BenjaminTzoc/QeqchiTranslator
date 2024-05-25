@@ -1,14 +1,41 @@
+*{
+    font-family: Montserrat, Inter, sans-serif;
+}
+
+.translator-container{
+    height: calc(100vh - 66px);
+    padding: 3em;
+}
+
+h1{
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+.dropdown-toggle{
+    font-size: 16px;
+}
+
+textarea{
+    font-size: 22px;
+    color: #FFF;
+    background: #3B3B3B;
+    resize: none;
+    width: 100%;
+    height: calc(100% - 28px - 1rem);
+    border-radius: 5px;
+    border: 1px solid #F9D07F;
+    padding: 5%;
+}
+
+.textareas-container{
+    height: 400px;
+}
+
 .textarea-border{
     border: 1px solid #F9D07F; 
     background: transparent;
 }
 
-p.quitarhover:hover{
-    background-color: transparent !important;
-}
 
-textarea{
-    font-family: "Inter", sans-serif;
-    font-size: 22px;
-    color: #FFF;
-}
