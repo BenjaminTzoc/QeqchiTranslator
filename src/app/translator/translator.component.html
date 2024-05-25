@@ -1,32 +1,48 @@
-<div>
-    <div class="w-100 h-100 d-flex justify-content-center text-font m-4">
-        <p class="p.quitarhover:hover">EMPIEZA A TRADUCIR</p>
-     </div>
-     <div>
-        <li class="nav-item dropdown w-100 h-100 d-flex justify-content-evenly align-items-center m-2">
-            <a class="nav-link dropdown-toggle mr-4 text-font" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Español
-            </a>
-            <ul class="dropdown-menu background">
-              <li><a class="dropdown-item" href="#">Opcion a</a></li>
-              <li><a class="dropdown-item" href="#">Opcion b</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Mas</a></li>
-            </ul>
-            <a class="nav-link dropdown-toggle text-font" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Q'eqchi
-              </a>
-              <ul class="dropdown-menu background">
-                <li><a class="dropdown-item" href="#">Opcion a</a></li>
-                <li><a class="dropdown-item" href="#">Opcion b</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Mas</a></li>
-              </ul>
-          </li>
-     </div>
-     <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-         <textarea placeholder="Ingrese un texto" rows="15" cols="40" [(ngModel)]="textToTranslate" style="resize: none;" class="textarea-border"></textarea>
-         <textarea placeholder="Traduccion" rows="15" cols="40" [(ngModel)]="textTranslation" style="resize: none;" class="textarea-border"></textarea>
-     </div>
+<div class="translator-container">
+    <div class="w-100 text-center">
+        <h1 class="title">Empieza a traducir</h1>
+    </div>
+    <div class="row mx-0 w-100 textareas-container">
+
+      <!-- SECCION DEL TEXTO A TRADUCIR -->
+      <div class="col-6 h-100 textarea-container">
+        <!-- INICIO DE SELECTOR DE IDIOMA -->
+        <div class="w-100 d-flex justify-content-center my-2">
+          <a class="nav-link dropdown-toggle mr-4 my-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Español
+          </a>
+          <ul class="dropdown-menu background">
+            <li><a class="dropdown-item" href="#">Opcion a</a></li>
+            <li><a class="dropdown-item" href="#">Opcion b</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Mas</a></li>
+          </ul>
+        </div>
+        <!-- FIN DE SELECTOR DE IDIOMA -->
+        <!-- INICIO DE TEXTAREA PARA INGRESO DE TEXTO -->
+        <textarea placeholder="Ingrese un texto" [(ngModel)]="textToTranslate" (input)="onTranslate($event)"></textarea>
+        <!-- FIN DE TEXTAREA PARA INGRESO DE TEXTO -->
+      </div>
+
+      <!-- SECCION DEL TEXTO TRADUCIDO -->
+      <div class="col-6 h-100 textarea-container">
+        <!-- INICIO DE SELECTOR DE IDIOMA -->
+        <div class="w-100 d-flex justify-content-center my-2">
+          <a class="nav-link dropdown-toggle mr-4 my-1" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Q'eqchi'
+          </a>
+          <ul class="dropdown-menu background">
+            <li><a class="dropdown-item" href="#">Opcion a</a></li>
+            <li><a class="dropdown-item" href="#">Opcion b</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Mas</a></li>
+          </ul>
+        </div>
+        <!-- FIN DE SELECTOR DE IDIOMA -->
+        <!-- INICIO DE TEXTAREA PARA INGRESO DE TEXTO -->
+        <textarea placeholder="Traducción" [(ngModel)]="textTranslation"></textarea>
+        <!-- FIN DE TEXTAREA PARA INGRESO DE TEXTO -->
+      </div>
+    </div>
 </div>
 

@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { title } from 'process';
 import { Router } from '@angular/router';
 import path from 'path';
+import { CategoriesService } from '../services/categories.service';
+import { Subject, debounceTime, distinctUntilChanged, switchMap } from 'rxjs';
+import { SearchService } from '../services/search.service';
 
 interface Card {
   title: string;
@@ -15,43 +18,45 @@ interface Card {
   templateUrl: './dictionary.component.html',
   styleUrl: './dictionary.component.css'
 })
-export class DictionaryComponent {
+export class DictionaryComponent implements OnInit {
 
-  searchQuery: string = ''; 
+  searchSubject = new Subject<string>();
+  searchQuery: string = '';
+  categories: any;
 
-  searchResults: any[] = [  
-    { id: 1, title: 'Rax', description: 'verde' },
-    { id: 2, title: 'Kaq', description: 'Rojo' },
-    { id: 3, title: 'Qan', description: 'Amarillo' }
- 
-  ];
   filteredResults: any[] = []; 
-  cards: Card[] = [
-    {title: 'Animales', URL: 'assets/card-image/cangrejo.png', translation: `Eb' li xul`, route: ['/animals']},
-    {title: 'Números', URL: 'assets/card-image/numero.png', translation: `Eb' li xul`, route: ['/numbers']}
-  ];
 
-  slideConfig = {"slidesToShow": 4, "slidesToScroll": 4, "autoplay": true, "autoplaySpeed": 4000};
+  constructor(
+    private router: Router,
+    private categoriesService: CategoriesService,
+    private searchService: SearchService
+  ){ }
 
-  constructor(private router: Router){
-    
+  ngOnInit(): void {
+    this.searchSubject.pipe(
+      debounceTime(500),
+      distinctUntilChanged(),
+      switchMap(query => this.searchService.search(query))
+    ).subscribe(results => {
+      this.filteredResults = results.map((result: any) => {
+        return {
+          word: result.Word,
+          translations: result.Translations.map((translation: any) => { return {term: translation.Term} }),
+        }
+      });
+      console.log(this.filteredResults);
+    });
+
+    this.categoriesService.getCategories().subscribe(category => {
+      this.categories = category;
+      console.log(this.categories);
+    });
   }
 
-  search(event: Event){
-    event.preventDefault();
-    this.filterResults();
-    this.searchResults = this.filteredResults; 
-    console.log('Search term:', this.filteredResults);
-  }
-  
-  filterResults() {
-    if (this.searchQuery.trim() !== '') {
-      this.filteredResults = this.searchResults.filter(result =>
-        result.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
-        result.description.toLowerCase().includes(this.searchQuery.toLowerCase())
-      );
-    } else {
-      this.filteredResults = [];
+  onSearch(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement) {
+      this.searchSubject.next(inputElement.value);
     }
   }
   

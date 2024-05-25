@@ -1,34 +1,37 @@
 <div>
     <div class="custom-search-container">
-        <form class="d-flex" role="search" (submit)="search($event)">
-            <input class="form-control me-2 custom-search-input" type="search" placeholder="Buscar palabra" aria-label="Search" [(ngModel)]="searchQuery" name="searchQuery">
-            <button class="btn btn-outline-success" type="submit">Buscar</button>
+        <form class="d-flex flex-column" role="search">
+            <input 
+                class="form-control mx-0 custom-search-input" 
+                type="search" 
+                placeholder="Buscar palabra" 
+                aria-label="Search" 
+                [(ngModel)]="searchQuery" 
+                name="searchQuery"
+                (input)="onSearch($event)"
+            >
+            <div class="w-100 mt-2 container" *ngIf="filteredResults.length > 0">
+                <div *ngFor="let result of filteredResults">
+                    <div class="d-flex align-items-end">
+                        <p class="my-0 word">{{ result.word }} </p>
+                        <div class="d-flex">
+                            <div class="d-flex align-items-end" *ngFor="let translation of result.translations; let i = index;">
+                                <p class="m-0 translation">{{ translation.term }}</p><span *ngIf="i < result.translations.length">, </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>   
     </div>
-
-    <div *ngIf="filteredResults.length > 0" class="container">
-        <div *ngFor="let result of filteredResults" class="result-item">
-            <h3 class="m-0">{{ result.title }}</h3>
-            <p class="m-0">{{ result.description }}</p>
-        </div>
-    </div>
-    
 
     <div class="w-100 d-flex justify-content-center">
         <h2 class="mb-0 mt-3">Categorías</h2>
     </div>
-    <div class="w-100 d-flex justify-content-center py-3">
-        <ngx-slick-carousel class="carousel"
-            #slickModal="slick-carousel"
-            [config]="slideConfig">
-            <div ngxSlickItem class="slide" *ngFor="let card of cards; let i = index;">
-                <!-- <div style="background: lime; margin-inline: 2em; height: 100px;">{{i}}</div> -->
-                <app-card [id]="i" [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation" (click)="redirectFromCard(card.route)"></app-card>
-            </div>
-        </ngx-slick-carousel>
-        <!-- <div *ngFor="let card of cards">
-            <app-card [title]="card.title" [imageUrl]="card.URL" [translation]="card.translation" (click)="redirectFromCard(card.route)"></app-card>
-        </div> -->
+    <div class="row mx-0 w-100">
+        <div class="col-md-3 mb-4 px-1" *ngFor="let card of categories">
+            <app-card [id]="card.ID" [title]="card.title" [imageUrl]="card.img_url" [translation]="card.translation" (click)="redirectFromCard([card.route])"></app-card>
+        </div>
     </div>
     <!-- <div>
         <button button class="btn btn-outline-success">Animales</button>
