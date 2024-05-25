@@ -15,8 +15,8 @@ import { NotesComponent } from './notes/notes.component';
 import { CardComponent } from './card/card.component';
 import { AnimalsComponent } from './animals/animals.component';
 import { NumbersComponent } from './numbers/numbers.component';
-import { DictionaryModule } from './dictionary/dictionary.module';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -35,9 +35,9 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    DictionaryModule,
     MatIconModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    HttpClientModule,
   ],
   providers: [
     provideClientHydration(),

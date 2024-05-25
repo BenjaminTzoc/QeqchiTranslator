@@ -8,3 +8,9 @@
     background-color: #242321 !important;
     color: #FFF !important;
 }
+
+::ng-deep body{
+    background: #2C2C2C;
+    color: #FFF;
+    font-family: Inter, sans-serif;
+}
